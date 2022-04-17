@@ -1,12 +1,15 @@
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    music.playMelody("A F E F D G E F ", 500)
+    music.playMelody("A F E F D G E F ", 1503)
 })
 input.onButtonPressed(Button.A, function () {
+    strip.showColor(neopixel.colors(NeoPixelColors.Red))
     for (let index = 0; index < 10; index++) {
-        strip.showColor(neopixel.colors(NeoPixelColors.Red))
         maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
+        basic.pause(100)
         maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
+        basic.pause(100)
         maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+        basic.pause(100)
         maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOff)
     }
 })
